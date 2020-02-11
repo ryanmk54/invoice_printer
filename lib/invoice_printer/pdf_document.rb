@@ -202,7 +202,7 @@ module InvoicePrinter
     def build_header
       @pdf.text_box(
         @labels[:name],
-        size: 20,
+        size: 16,
         align: :left,
         at: [0, y(720) - @push_down],
         width: x(300),
@@ -220,7 +220,7 @@ module InvoicePrinter
 
       @pdf.text_box(
         @document.number,
-        size: 20,
+        size: 16,
         at: [x(240), y(720) - @push_down],
         width: x(300),
         align: :right
@@ -713,7 +713,7 @@ module InvoicePrinter
       }
 
       unless items.empty?
-        @pdf.font_size(10) do
+        @pdf.font_size(8) do
           @pdf.table(data, options) do
             row(0).background_color = 'e3e3e3'
             row(0).border_color = 'aaaaaa'
